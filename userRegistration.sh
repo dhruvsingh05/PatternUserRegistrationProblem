@@ -17,7 +17,16 @@ then
                         	pattern3="^[1-9]{2,2}([ ][1-9])([0-9]{9,9})$"
                         	if [[ $m_no =~ $pattern3 ]]
                         	then
-                                	echo "Thank You"
+                                	
+ 					read -p "Enter your password(min 8 char): " pass
+                                	password="([0-9a-zA-Z!@#$]{8,8})$"
+                                	if [[ $pass =~ $password ]]
+                                	then
+                                        	echo "Thank You"
+                                	else
+                                        	echo "please enter min 8 char"
+                                	fi
+
                         	else
                                 	echo "please enter your correct mobile number"
                         	fi
