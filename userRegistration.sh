@@ -17,19 +17,22 @@ then
                         	pattern3="^[1-9]{2,2}([ ][1-9])([0-9]{9,9})$"
                         	if [[ $m_no =~ $pattern3 ]]
                         	then
-                                	
+					echo "PASSWORD FORMAT"
+                                	 echo "Length should be 8 characters"
+                                         echo "It should contain at least one capital case letter."
+                                         echo "It should contain at least one number"
+                                         echo "It should contain one of the following special characters: @, $, #, !"
  					read -p "Enter your password(min 8 char): " pass
                                 	password="([0-9a-zA-Z!@#$]{8,})$"
 					u_case="[A-Z]+"
                                 	num="[0-9]+"
-					if [[ $pass =~ $password && $pass =~ $u_case && $pass =~ $num  ]]
+					schar="[!@#$]+"
+					if [[ $pass =~ $password && $pass =~ $u_case && $pass =~ $num && $pass =~ $schar ]]
                                 	then
                                         	echo "Thank You"
                                 	else
-                                        	echo "Length should be 8 characters"
-						echo "It should contain at least one capital case letter."
-						echo "It should contain at least one number"
-                                	fi
+                                        	echo "wrong password format"
+	                          	fi
 
                         	else
                                 	echo "please enter your correct mobile number"
