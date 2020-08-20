@@ -21,12 +21,14 @@ then
  					read -p "Enter your password(min 8 char): " pass
                                 	password="([0-9a-zA-Z!@#$]{8,})$"
 					u_case="[A-Z]+"
-                                	if [[ $pass =~ $password && $pass =~ $u_case  ]]
+                                	num="[0-9]+"
+					if [[ $pass =~ $password && $pass =~ $u_case && $pass =~ $num  ]]
                                 	then
                                         	echo "Thank You"
                                 	else
                                         	echo "Length should be 8 characters"
 						echo "It should contain at least one capital case letter."
+						echo "It should contain at least one number"
                                 	fi
 
                         	else
